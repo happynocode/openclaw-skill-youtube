@@ -26,34 +26,34 @@ DEFAULT_OUTPUT = "/tmp/youtube_summary.json"
 # LLM API config
 OPENCLAW_CONFIG = os.path.expanduser("~/.openclaw/openclaw.json")
 
-SUMMARY_PROMPT_TEMPLATE = """You are a professional content analyst. Please generate an in-depth, practical summary (at least 300 words) for the following YouTube video transcript.
+SUMMARY_PROMPT_TEMPLATE = """你是一个专业的内容分析师。请对以下 YouTube 视频字幕生成一份深度、实用的摘要（至少300字）。
 
-Video Title: {title}
-Channel: {channel}
-Duration: {duration}
-Transcript: {transcript}
+视频标题: {title}
+频道: {channel}
+时长: {duration}
+字幕内容: {transcript}
 
-Please output strictly in the following format (no preamble):
+请严格按照以下格式输出（不要有任何其他开场白）：
 
-### 🎯 Core Problem/Innovation
-- Summarize in one sentence what problem the video addresses
-- What novel perspectives or technical breakthroughs are presented
+### 🎯 核心问题/创新点
+- 一句话概括视频要解决什么问题
+- 有什么新颖的观点或技术突破
 
-### 💡 Key Arguments (detailed, 2-3 sentences each)
-1. **Argument 1**: Detailed explanation with specific data, examples, or evidence
-2. **Argument 2**: ...
-3. **Argument 3**: ...
+### 💡 核心论点（详细展开，每点2-3句话）
+1. **论点1**：详细解释，包含具体数据、案例或证据
+2. **论点2**：...
+3. **论点3**：...
 
-### 🛠️ Practical Steps (if applicable)
-1. Step 1: Specific instructions
-2. Step 2: ...
+### 🛠️ 实操步骤（如果有）
+1. 第一步：具体怎么做
+2. 第二步：...
 
-### 💰 Value & Application
-- Who would benefit from this content
-- How to apply it to real work/life situations
+### 💰 价值与应用
+- 这个内容对谁有价值
+- 如何应用到实际工作/生活中
 
-### ⚠️ Considerations
-- Risks, limitations, and important notes"""
+### ⚠️ 注意事项
+- 风险、限制、需要注意的地方"""
 
 
 def get_openclaw_token() -> Optional[str]:
